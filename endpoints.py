@@ -1,0 +1,1 @@
+NEW_EMAIL = "https://10minutemail.com/session/address"
