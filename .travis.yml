@@ -4,4 +4,5 @@ python:
     - "3.7"
     - "3.8"
     - "3.9"
-script: tox
+script:
+    - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
