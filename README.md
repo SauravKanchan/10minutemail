@@ -1,4 +1,6 @@
 # 10MinuteMail
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-10minutemail)
+![APM](https://img.shields.io/apm/l/vim-mode)
 
 Python wrapper for [10minutemail](https://10minutemail.com/)
 
@@ -12,6 +14,7 @@ pip install python-10minutemail
 
 ```python
 from minutemail import Mail
+import time
 
 # Create a new 10 minute mail
 mail = Mail()
@@ -19,8 +22,9 @@ print(mail)
 
 # Keep on checking for a new mail/message
 while True:
-    if mail.new_message():  # Check for new mail 
+    if mail.new_message():  # Check for new mail
         print(mail.fetch_message())  # Fetch all the messages
+    time.sleep(2)
 ```
 
 ### Sample message list
@@ -45,3 +49,5 @@ while True:
   ...
 ]
 ```
+
+> Warning: If you use this tool/API 
