@@ -45,8 +45,7 @@ while True:
     "bodyHtmlContent": "<div dir=\"ltr\">Test description</div>\r\n",
     "bodyPreview": "Test description\r\n",
     "id": "2118940165622869807"
-  }, 
-  ...
+  }
 ]
 ```
 
