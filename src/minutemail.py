@@ -6,15 +6,17 @@ class Mail(object):
     def __init__(self):
         self.session = requests.session()
         self.message_count = 0
+        self.messages = []
         self.mail = self.session.get(NEW_EMAIL).json()['address']
 
     def get_mail(self):
         return self.mail
 
     def get_message(self):
-        res = self.session.get(MESSAGE_AFTER+str(self.message_count)).json()
-        if len(res) !=0:
-            print(res, len(res), "adsf")
+        res = self.session.get(MESSAGE_AFTER + str(self.message_count)).json()
+        if len(res) != 0:
+            self.message_count += 1
+            self.messages.push(res)
 
     def __str__(self):
         return self.mail
