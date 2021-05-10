@@ -1,6 +1,7 @@
 # 10MinuteMail
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-10minutemail)
 ![APM](https://img.shields.io/apm/l/vim-mode)
+[![Build Status](https://www.travis-ci.com/SauravKanchan/10minutemail.svg?branch=main)](https://www.travis-ci.com/SauravKanchan/10minutemail)
 
 Python wrapper for [10minutemail](https://10minutemail.com/)
 
@@ -49,4 +50,4 @@ while True:
 ]
 ```
 
-> Warning: If you use this tool/API 
+> Warning: If you overuse this tool/API, then 10minutemail.com may block your IP address. 
