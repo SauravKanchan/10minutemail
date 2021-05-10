@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="10minutemail",
+    name="python-10minutemail",
     version="0.0.1",
     description="Python wrapper for 10minutemail.com",
     long_description=README,
@@ -24,7 +24,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    py_modules= ["10mintemail"],
+    py_modules= ["minutemail"],
     package_dir={"": "src"},
     include_package_data=True,
     install_requires=[],
