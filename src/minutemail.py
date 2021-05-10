@@ -1,5 +1,5 @@
 import requests
-from endpoints import NEW_EMAIL, MESSAGE_AFTER
+from endpoints import NEW_EMAIL, MESSAGE_AFTER, MESSAGE_COUNT
 
 
 class Mail(object):
@@ -13,17 +13,24 @@ class Mail(object):
         return self.mail
 
     def get_message(self):
+        return self.messages
+
+    def fetch_message(self):
         res = self.session.get(MESSAGE_AFTER + str(self.message_count)).json()
-        if len(res) != 0:
-            self.message_count += 1
-            self.messages.push(res)
+        self.message_count += len(res)
+        self.messages += res
+        return self.messages
+
+    def new_message(self):
+        return self.session.get(MESSAGE_COUNT).json()['messageCount'] != self.message_count
 
     def __str__(self):
         return self.mail
 
 
 if __name__ == "__main__":
+    import time
     mail = Mail()
     print(mail.get_mail())
     while True:
-        mail.get_message()
+        time.sleep(2)
