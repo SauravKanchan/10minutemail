@@ -1,6 +1,6 @@
 import requests
 from endpoints import NEW_EMAIL, MESSAGE_AFTER, MESSAGE_COUNT
-
+from fake_useragent import UserAgent
 
 class Mail(object):
     """
@@ -9,6 +9,7 @@ class Mail(object):
 
     def __init__(self):
         self.session = requests.session()
+        self.session.headers = {'user-agent': UserAgent().random}
         self.message_count = 0
         self.messages = []
         self.mail = self.session.get(NEW_EMAIL).json()['address']
